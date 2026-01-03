@@ -7,7 +7,8 @@ import {
 } from 'react-router-dom'
 import { lazy, Suspense } from "react";
 
-const Home = lazy(() => import("./Components/Home"));
+import Home from './Components/Home';
+// const Home = lazy(() => import("./Components/Home"));
 const Skills = lazy(() => import("./Components/Skills"));
 
 import Login from './Components/Login'
@@ -38,27 +39,23 @@ function App() {
         <Router>
           <Routes>
 
-            {/* Default landing */}
             <Route
-              path="/"
+              path="/*"
               element={isLoggedIn ? <Navigate to="/home" /> : <Login />}
             />
 
-            {/* Protected routes */}
             <Route
               path="/home"
-              element={isLoggedIn ? <Home /> : <Navigate to="/" />}
+              element={isLoggedIn ? <Home /> : <Navigate to="/*" />}
             />
 
             <Route
               path="/skills"
-              element={isLoggedIn ? <Skills /> : <Navigate to="/" />}
+              element={isLoggedIn ? <Skills /> : <Navigate to="/*" />}
             />
 
-            {/* Public route */}
             <Route path="/signup" element={<Signup />} />
 
-            {/* Fallback */}
             <Route
               path="/*"
               element={<Navigate to="/" />}

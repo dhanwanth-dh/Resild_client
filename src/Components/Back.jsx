@@ -7,10 +7,10 @@ const Back = () => {
             <div className='-z-10 h-full'>
                 <Particles
                     particleColors={['#ffffff', '#ffffff']}
-                    particleCount={1000}
-                    particleSpread={10}
-                    speed={0.1}
-                    particleBaseSize={100}
+                    particleCount={10000}
+                    particleSpread={20}
+                    speed={0.5}
+                    particleBaseSize={500}
                     moveParticlesOnHover={true}
                     alphaParticles={false}
                     disableRotation={false}
