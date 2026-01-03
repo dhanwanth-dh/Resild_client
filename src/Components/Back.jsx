@@ -9,8 +9,8 @@ const Back = () => {
                     particleColors={['#ffffff', '#ffffff']}
                     particleCount={10000}
                     particleSpread={20}
-                    speed={0.5}
-                    particleBaseSize={500}
+                    speed={0.01}
+                    particleBaseSize={100}
                     moveParticlesOnHover={true}
                     alphaParticles={false}
                     disableRotation={false}
