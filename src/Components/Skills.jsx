@@ -126,9 +126,9 @@ const Skills = () => {
 
     return (
         <>
-            <div className='h-150 w-200 flex flex-col items-center justify-between'>
+            <div className='h-90 w-80 flex flex-col items-center justify-between'>
                 <div className='mt-10 flex flex-col justify-between gap-20 items-center'>
-                    <div className='h-70 w-130 flex flex-col justify-around items-center bg-amber-50 rounded-2xl'>
+                    <div className='h-70 w-70 flex flex-col justify-around items-center bg-amber-50 rounded-2xl'>
 
                         <Autocomplete
                             multiple
@@ -151,7 +151,7 @@ const Skills = () => {
                                     </li>
                                 );
                             }}
-                            style={{ width: 500 }}
+                            style={{ width: 250 }}
                             renderInput={(params) => (
                                 <TextField {...params} label="Skills" placeholder="Interests" />
                             )}
@@ -164,7 +164,7 @@ const Skills = () => {
                         >
                             <Space>
                                 <Button
-                                    className='w-125'
+                                    className='w-68'
                                     type="primary"
                                     size="large"
                                     icon={<AntDesignOutlined />}
