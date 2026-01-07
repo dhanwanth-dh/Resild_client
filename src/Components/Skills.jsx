@@ -60,15 +60,12 @@ const VisuallyHiddenInput = styled('input')({
 
 const Skills = () => {
     const { styles } = useStyle();
-
-    /* ================== STATE ================== */
     const [selectedSkills, setSelectedSkills] = useState([]);
     const [uploadedFiles, setUploadedFiles] = useState([]);
     const [currentUser, setCurrentUser] = useState(null);
 
     const auth = getAuth();
 
-    /* ================== AUTH FIX ================== */
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -78,7 +75,6 @@ const Skills = () => {
 
         return () => unsubscribe();
     }, [auth]);
-    /* ============================================ */
 
     const handleSubmit = async () => {
         try {
@@ -86,8 +82,6 @@ const Skills = () => {
                 alert("Authentication still loading. Please try again.");
                 return;
             }
-
-            // 🔥 get username from Firestore
             const userDocRef = doc(db, "users", currentUser.uid);
             const userSnap = await getDoc(userDocRef);
 
@@ -102,8 +96,6 @@ const Skills = () => {
                 alert("Username missing in user profile");
                 return;
             }
-
-            // 🔥 save skills using username as document ID
             await setDoc(doc(db, "skills", username), {
                 skills: selectedSkills.map(skill => skill.title),
                 files: uploadedFiles.map(file => ({
