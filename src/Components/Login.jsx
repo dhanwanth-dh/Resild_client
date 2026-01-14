@@ -17,7 +17,7 @@ const Login = () => {
         }
 
         try {
-            // 🔍 Query Firestore for matching email
+
             const q = query(
                 collection(db, "users"),
                 where("email", "==", email)
@@ -30,23 +30,17 @@ const Login = () => {
                 return
             }
 
-            // Since email should be unique, take first doc
             let userData
             querySnapshot.forEach((doc) => {
                 userData = doc.data()
             })
-
-            // 🔐 Password check
             if (userData.password !== password) {
                 alert("Incorrect password")
                 return
             }
 
-            // ✅ Login success
             alert("Login successful")
 
-            // (Optional) store login session
-            // localStorage.setItem("user", JSON.stringify(userData))
             chrome.storage.local.set({
                 isLoggedIn: true,
                 user: userData
