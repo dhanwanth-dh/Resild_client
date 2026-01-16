@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 const markInterested = () => {
-    // Send message to Chrome Extension
     if (chrome?.runtime?.sendMessage) {
         chrome.runtime.sendMessage({
             type: "MARK_INTERESTED"

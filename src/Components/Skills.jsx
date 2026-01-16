@@ -215,10 +215,10 @@ const top100Films = [
     { title: 'Hardware Design' },
     { title: 'Circuit Design' },
     { title: 'Optimization' },
-    { title: 'Engine programming' },
-    { title: 'Simulation' },
-    { title: 'System Knowledge' },
-    { title: 'Project Management' },
+    // { title: 'Engine programming' },
+    // { title: 'Simulation' },
+    // { title: 'System Knowledge' },
+    // { title: 'Project Management' },
 ];
 
 export default Skills;
